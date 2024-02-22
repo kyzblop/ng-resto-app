@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <app-search-restaurant></app-search-restaurant>
+        <div *ngFor="let restaurant of restaurantList" class="col m4 s6">
+            <div (click)="goToRestaurant(restaurant)" class="card horizontal" RestaurantBorderCard>
+                <div class="card-image">
+                    <img [src]="restaurant.picture" alt="">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p><small>{{ restaurant.name}}</small></p>
+                        <p><small>{{ restaurant.derniereVisite | date:"dd/MM/yyyy" }}</small></p>
+                        <span *ngFor="let type of restaurant.types"class="{{ type | restaurantTypeColor }}">
+                            {{ type }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a 
+    class="btn-floating btn-large waves-effect waves-light red z-depth-3"
+    style="position: fixed; bottom: 25px; right: 25px;"
+    routerLink="/restaurant/add"
+> + </a>
