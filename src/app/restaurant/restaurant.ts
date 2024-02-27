@@ -6,6 +6,7 @@ export class Restaurant {
     adresse : string;
     derniereVisite : Date;
     types : Array<string>;
+    reservationLink: string;
 
     constructor(
         name: string = "Entrer un nom",

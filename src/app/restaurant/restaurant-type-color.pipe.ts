@@ -9,17 +9,29 @@ export class RestaurantTypeColorPipe implements PipeTransform {
     let color: string;
 
     switch (type){
-      case 'fast-food':
+      case 'Fast-food':
         color = "lime accent-1";
         break;
       
-      case 'option vege':
+      case 'Option vege':
         color = 'green lighten-1';
         break;
       
-      case 'option halal':
+      case 'Option halal':
         color = 'pink lighten-4';
         break;
+
+      case 'Sushi':
+          color = 'orange';
+          break;
+
+      case 'Italien':
+          color = 'red';
+          break;
+
+      case 'Fait maison':
+          color = 'blue';
+          break;
 
       default:
         color = 'grey'

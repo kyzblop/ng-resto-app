@@ -36,7 +36,9 @@
                     <a (click)="goToRestaurantList()">Retour</a>
                     <a (click)="goToEditRestaurant(restaurant)">Editer</a>
                     <a (click)="deleteRestaurant(restaurant)">Supprimer</a>
+                    <a *ngIf= "restaurant.reservationLink !== '' " (click)="reserver()">Reserver une table</a>
                 </div>
+                
             </div>
         </div>
     </div>

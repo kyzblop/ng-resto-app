@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Restaurant } from '../restaurant';
 import { RestaurantService } from '../restaurant.service';
@@ -9,7 +9,7 @@ import { RestaurantService } from '../restaurant.service';
   styles: [
   ]
 })
-export class DetailRestaurantComponent implements OnInit {
+export class DetailRestaurantComponent implements OnInit{
 
   restaurantList : Restaurant[];
   restaurant : Restaurant | undefined;
@@ -27,8 +27,8 @@ export class DetailRestaurantComponent implements OnInit {
       // this.restaurant = this.restaurantService.getRestaurantById(+restaurantId);
       this.restaurantService.getRestaurantById(+restaurantId)
         .subscribe(restaurant => this.restaurant = restaurant)
+ 
     }
-    
   }
 
   goToRestaurantList() {
@@ -42,5 +42,11 @@ export class DetailRestaurantComponent implements OnInit {
   deleteRestaurant(restaurant: Restaurant) {
     this.restaurantService.deleteRestaurantById(restaurant.id)
       .subscribe(() => this.goToRestaurantList());
+  }
+
+  reserver() {
+    let url : string | undefined;
+    url = this.restaurant?.reservationLink
+    window.open(url, "_blank");
   }
 }

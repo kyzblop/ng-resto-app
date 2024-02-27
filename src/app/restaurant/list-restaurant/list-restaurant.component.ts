@@ -6,8 +6,7 @@ import { RestaurantService } from '../restaurant.service';
 @Component({
   selector: 'app-list-restaurant',
   templateUrl: './list-restaurant.component.html',
-  styles: [
-  ]
+  styleUrls: ['./list-restaurant.component.css']
 })
 export class ListRestaurantComponent implements OnInit {
 
@@ -28,5 +27,9 @@ export class ListRestaurantComponent implements OnInit {
 
   goToRestaurant(restaurant : Restaurant) {
     this.router.navigate(['restaurant', restaurant.id])
+  }
+
+  addRestaurant() {
+    this.router.navigate(['/restaurant/add'])
   }
 }

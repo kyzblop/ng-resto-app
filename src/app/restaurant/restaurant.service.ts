@@ -76,9 +76,12 @@ export class RestaurantService {
   
   getRestaurantTypeList(): string[] {
     return [
-      'fast-food', 
-      'option vege', 
-      'halal'
+      'Fast-food', 
+      'Option vege', 
+      'Halal',
+      'Sushi',
+      'Italien',
+      'Fait maison',
     ];
   }
 
